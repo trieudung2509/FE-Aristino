@@ -3046,8 +3046,7 @@
             align-items: center
         }
 
-        .vHeader__top>ul li,
-        .vHeader__top>ul li a {
+        .vHeader__top>ul li {
             display: flex;
             color: #fff;
             font-size: 12px;
@@ -4349,14 +4348,6 @@
             min-width: 88px !important
         }
 
-        .action-delete {
-            margin-top: 10px;
-            background: #eee;
-            border: 0;
-            outline: 0;
-            padding: 0 5px
-        }
-
         .deal-time {
             margin-top: 5px;
             clear: both
@@ -4411,13 +4402,6 @@
             float: left
         }
 
-        .quantity {
-            text-align: center;
-            width: 100%;
-            float: left;
-            display: flex;
-            justify-content: center
-        }
 
         .quantity .inc.qtybutton,
         .quantity .dec.qtybutton {
@@ -9349,6 +9333,39 @@
                                 <span class="count">0</span>
                             </a>
                         </div>
+                        <div class="block-minicart">
+                            <!-- ======== co item ============= -->
+                            <!-- <ol class="minicart-items">
+                                <li class="minicart-item">
+                                    <div class="minicart-item-info">
+                                        <div class="minicart-item-photo"><a  href="/ao-ni-unisex-tre-em-3tw21w002?childSku=3TW21W002-SE114-110" class=""><img  src="https://canifa.com/img/210/300/resize/3/t/3tw21w002-se114-110-1.jpg" alt=""></a> <span  class="minicart-item-label">-20%</span></div>
+                                        <div class="minicart-item-details">
+                                        <h3 class="minicart-item-name"><a  href="/ao-ni-unisex-tre-em-3tw21w002?childSku=3TW21W002-SE114-110" class="">Áo nỉ unisex trẻ em</a></h3>
+                                        <div class="minicart-item-options">
+                                            <div class="minicart-item-option"><span >1 Sản phẩm</span></div>
+                                            <div class="minicart-item-option"><span  class="value"><span  class="swatch-option" style="background-image: url(&quot;https://media.canifa.com/attribute/swatch/images/se114.png&quot;);"></span></span> <span  class="label">Màu </span></div>
+                                            <div class="minicart-item-option"><span  class="label">Kích cỡ:</span> <span  class="value">110</span></div>
+                                        </div>
+                                        <div class="minicart-item-action"><a  href="#" class="minicart-item-remove"><span >Xoá</span></a></div>
+                                        <div class="minicart-item-price"><span >Tổng:</span> <span  class="price">199.200 ₫</span></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                            
+                            <div class="minicart-actions"><button class="action checkout">Xem giỏ hàng</button></div>
+                            <div class="minicart-subtotal"><span >Tạm tính </span> <b >199.200 ₫</b></div> -->
+                            
+                            <!-- khong co gi ca -->
+                            <div class="minicart-close"><span>close</span></div>
+                            <div class="minicart-empty">
+                               <div class="minicart-empty-icon"></div>
+                               <p>
+                                  Chưa có sản phẩm <br >
+                                  trong giỏ hàng của bạn.
+                               </p>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -9376,24 +9393,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="shopping__cart">
-                    <div class="shopping__cart__inner">
-                        <div class="offsetmenu__close__btn">
-                            <a href="#"><i class="pe-7s-close"></i></a>
-                        </div>
-                        <div class="shp__cart__wrap">
-
-                        </div>
-                        <ul class="shoping__total">
-                            <li class="subtotal">Tổng tiền:</li>
-                            <li class="total__price">0 đ</li>
-                        </ul>
-                        <ul class="shopping__btn">
-                            <li><a href="gio-hang.html" rel="nofollow">Xem giỏ hàng</a></li>
-                            <li class="shp__checkout"><a href="thanh-toan.html" rel="nofollow">Thanh toán</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
             </div>
 
             <script type="text/javascript">
@@ -9765,370 +9765,708 @@
             </div>
         </div>
 
+        <main class="site-main">
+            <div class="breadcrumbs">
+               <ul class="items">
+                  <li class="item"><a href="/" class="router-link-active">
+                     Trang chủ
+                     </a>
+                  </li>
+                  <li class="item"><a href="/shopcart" class="router-link-exact-active router-link-active">
+                     Giỏ hàng
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <div class="cart-row">
+               <div class="cart-container">
+                  <div class="cart-top">
+                     <h1 class="page-title">Giỏ hàng</h1>
+                     <ul class="checkout-cart-link-top">
+                        <li>Hỗ trợ khách hàng: 1800 6061</li>
+                        <li><a href="https://canifa.com/van-chuyen.html" target="_black">Chính sách vận chuyển</a></li>
+                        <li><a href="/returns" class="">Quy định đổi trả </a></li>
+                     </ul>
+                  </div>
+                  <div class="cart-form">
+                     <table class="cart-items">
+                        <thead>
+                           <tr>
+                              <th class="col item"><span>Sản phẩm</span></th>
+                              <th class="col actions"></th>
+                              <th class="col qty"><span>Số lượng</span></th>
+                              <th class="col price"><span>Giá tiền</span></th>
+                              <th class="col price-sale"><span>Giảm giá</span></th>
+                              <th class="col subtotal"><span>Tổng tiền</span></th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr class="cart-item">
+                              <td data-th="Sản phẩm" class="col item">
+                                 <div class="cart-item-info">
+                                    <div class="cart-item-photo"><a href="/ao-ni-be-gai-1tw21c001?childSku=1TW21C001-SM050-120" class="cart-image-container"><img src="https://canifa.com/img/210/300/resize/1/t/1tw21c001-sm050-120-1.jpg" alt=""></a></div>
+                                    <div class="cart-item-details">
+                                       <strong class="cart-item-name"><a href="/ao-ni-be-gai-1tw21c001?childSku=1TW21C001-SM050-120" class="">
+                                       Áo nỉ bé gái có cổ phối thân dưới
+                                       </a></strong> 
+                                       <div class="cart-item-options">
+                                          <div class="cart-item-option"><span>Màu sắc:</span> <span><span class="swatch-option color" style="background-image: url(&quot;https://media.canifa.com/attribute/swatch/images/sm050.png&quot;);"></span></span></div>
+                                          <div class="cart-item-option"><span>Kích cỡ:</span> <span><span class="swatch-option text">120</span></span></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td class="col actions"><a href="#" title="Xóa" class="action-delete"><span>Xóa</span></a></td>
+                              <td data-th="Số lượng" class="col qty">
+                                 <div class="cart-item-qty"><a href="#" class="btn-number btn-number-minus"><span>▼</span></a> <input type="number" class="input-cart-item-qty"> <a href="#" class="btn-number btn-number-plus"><span>▲</span></a></div>
+                              </td>
+                              <td data-th="Giá tiền" class="col price"><span class="price">349.000 ₫</span></td>
+                              <td data-th="Giảm giá" class="col price-sale"><span class="price">69.800 ₫</span></td>
+                              <td data-th="Tổng tiền" class="col subtotal"><span class="price">279.200 ₫</span></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="cart-bottom">
+                     <div class="cart-bottom-banner">
+                        <img src="assets/images/cart-banner.png" alt=""> 
+                        <p><a href="#">Tiếp tục mua hàng</a></p>
+                     </div>
+                     <div class="cart-summary">
+                        <table class="cart-totals">
+                           <tbody>
+                              <tr class="quantity">
+                                 <th>Tổng sản phẩm:</th>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <th>Giảm giá:</th>
+                                 <td>69.800 ₫</td>
+                              </tr>
+                              <tr class="grand-totals">
+                                 <th>Tạm Tính:</th>
+                                 <td>279.200 ₫</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <button type="button" class="action-checkout"><span>Hoàn tất đơn hàng</span></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="cart-row-right"></div>
+            </div>
+         </main>
 
-        <main id="main-site-product">
-            <script type="text/javascript">
-                function cart_check_out_started() {
-                    try {
-                        follower.track("cart_check_out_started", {
-                            "properties": {
-                                "checkoutID": "101.99.12.54-20211015-20",
-                                "itemIDs": [2937],
-                                "items": [2937],
-                                "productIDs": [2937],
-                                "products": [2937],
-                                "quantity": 1,
-                                "revenue": 750000,
-                            }
-                        });
-                    } catch (e) {
-                        console.log(e);
-                    }
-                }
-                function checkout_step_1_viewed() {
-                    try {
-                        follower.track('checkout_step_1_viewed', {
-                            'properties': {
-                                'checkoutID': '101.99.12.54-20211015-20',
-                                'stepName': 'Bước Xem Giỏ hàng'
-                            }
-                        });
-                    } catch (e) {
-                        console.log(e);
-                    }
-                }
-            </script>
-            <section class="main-product-cate mr-top">
-                <div class="top-menu-cate add-fix">
-                    <ul>
-                        <li><a href="https://aristino.com/gio-hang.html" class="active" rel="nofollow">Giỏ hàng</a></li>
-                        <li class="cart-breadcrumb-divider"><i class="fa fa-angle-right"></i></li>
-                        <li><a href="https://aristino.com/thanh-toan.html" rel="nofollow">Giao hàng & thanh toán</a>
-                        </li>
-                        <li class="cart-breadcrumb-divider"><i class="fa fa-angle-right"></i></li>
-                        <li><a href="javascript:void(0)" rel="nofollow">Xác nhận</a></li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <div class="row col-cart">
-                        <div class="col-md-12">
-                            <h1 class="page-heading__title">Giỏ hàng của bạn</h1>
-                            <span class="total-pro">Có 1 sản phẩm</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <table id="cart" class="table table-hover table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 50%">Sản phẩm</th>
-                                        <th style="width: 30%">Giá bán</th>
-                                        <th style="width: 10%">Số lượng</th>
-                                        <th style="width: 10%">#</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 50%">
-                                            <div class="row">
-                                                <div class="img">
-                                                    <img src="https://aristino.com/Data/ResizeImage/imagesproduct/quan-au/atr00301/quan-au-nam-aristino-ATR00301-02x500x500x4.jpg"
-                                                        class="img-responsive" alt="Quần âu nam Aristino ATR00301" />
-                                                </div>
-                                                <div class="info">
-                                                    <h4 class="nomargin">Quần âu nam Aristino ATR00301</h4>
-                                                    <p>
-                                                        <label>Màu</label>:<span>Xám 18 kẻ</span>
-                                                    </p>
-                                                    <p>
-                                                        <label>Cỡ</label>:<span>31</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="width: 30%">
-                                            <div class="price">
-                                                <span class="bt">750.000 đ</span>
-                                            </div>
-                                        </td>
-                                        <td style="width: 10%">
-                                            <select class="form-control"
-                                                onchange="update_cart('2937', this.value, '6461', 32892, '')">
-                                                <option value="1" selected="selected">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                            </select>
-                                        </td>
-                                        <td class="actions" style="width: 10%">
-                                            <button type="button" class="btn btn-danger"
-                                                onclick="delete_cart('2937', '6461', 32892, '');"><i
-                                                    class="fa fa-trash-o"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <div class="col-md-3">
-                            <ul class="shoping__total shoping__total-cart">
-                                <li class="subtotal">Tổng tiền:</li>
-                                <li class="total__price">750.000 đ</li>
-                            </ul>
-                            <ul class="shopping__btn">
-                                <li><a href="/" rel="nofollow">Quay trở lại</a></li>
-                                <li class="shp__checkout"><a href="https://aristino.com/thanh-toan.html"
-                                        id="cartCheckoutBtn" rel="nofollow">Thanh toán</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row col-cart">
-                        <div class="col-md-12">
-                            <h1 class="page-heading__title">GỢI Ý SẢN PHẨM KHUYẾN MẠI</h1>
-                            <span class="total-pro">Các sản phẩm khuyến mại thường được mua cùng</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <table id="cart" class="table table-hover table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 50%">Sản phẩm</th>
-                                        <th style="width: 30%">Giá bán</th>
-                                        <th style="width: 10%">Số lượng</th>
-                                        <th style="width: 10%">#</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 50%">
-                                            <div class="row">
-                                                <div class="img">
-                                                    <img src="https://aristino.com/Data/ResizeImage/imagesproduct-outlet/so-mi-dai-tay/als025s7/ao-so-mi-nam-aristino-ALS025S7x500x500x4.jpg"
-                                                        class="img-responsive"
-                                                        alt="Áo sơ mi nam dài tay Aristino ALS025S7" />
-                                                </div>
-                                                <div class="info">
-                                                    <h4 class="nomargin">Áo sơ mi nam dài tay Aristino ALS025S7</h4>
-                                                    <div class="alert-sale">Ưu đãi hội viên</div>
-                                                    <div class="alert-sale">Lên đồ mới - Đón nhịp sống mới</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="width: 30%">
-                                            <div class="price">
-                                                <span class="ins">480.000 đ</span>
-                                                <span class="del">1.600.000 đ</span>
-                                            </div>
-                                        </td>
-                                        <td class="actions" style="width: 20%">
-                                            <div class="actions-btn" style="position: inherit">
-                                                <a href="https://aristino.com/ao-so-mi-nam-dai-tay-aristino-als025s7.html"
-                                                    style="opacity: 1"><i class="pe-7s-look"></i>Mua thêm</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%">
-                                            <div class="row">
-                                                <div class="img">
-                                                    <img src="https://aristino.com/Data/ResizeImage/imagesproduct-outlet/so-mi-dai-tay/als026s7/ao-so-mi-nam-aristino-ALS026S7x500x500x4.jpg"
-                                                        class="img-responsive" alt="Áo sơ mi nam Aristino ALS026S7" />
-                                                </div>
-                                                <div class="info">
-                                                    <h4 class="nomargin">Áo sơ mi nam Aristino ALS026S7</h4>
-                                                    <div class="alert-sale">Ưu đãi hội viên</div>
-                                                    <div class="alert-sale">Lên đồ mới - Đón nhịp sống mới</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="width: 30%">
-                                            <div class="price">
-                                                <span class="ins">480.000 đ</span>
-                                                <span class="del">1.600.000 đ</span>
-                                            </div>
-                                        </td>
-                                        <td class="actions" style="width: 20%">
-                                            <div class="actions-btn" style="position: inherit">
-                                                <a href="https://aristino.com/ao-so-mi-nam-aristino-als026s7.html"
-                                                    style="opacity: 1"><i class="pe-7s-look"></i>Mua thêm</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%">
-                                            <div class="row">
-                                                <div class="img">
-                                                    <img src="https://aristino.com/Data/ResizeImage/imagesproduct-outlet/so-mi-dai-tay/als057s7/ao-so-mi-nam-aristino-ALS057S7x500x500x4.jpg"
-                                                        class="img-responsive" alt="Áo sơ mi nam Aristino ALS057S7" />
-                                                </div>
-                                                <div class="info">
-                                                    <h4 class="nomargin">Áo sơ mi nam Aristino ALS057S7</h4>
-                                                    <div class="alert-sale">Ưu đãi hội viên</div>
-                                                    <div class="alert-sale">Lên đồ mới - Đón nhịp sống mới</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="width: 30%">
-                                            <div class="price">
-                                                <span class="ins">480.000 đ</span>
-                                                <span class="del">1.600.000 đ</span>
-                                            </div>
-                                        </td>
-                                        <td class="actions" style="width: 20%">
-                                            <div class="actions-btn" style="position: inherit">
-                                                <a href="https://aristino.com/ao-so-mi-nam-aristino-als057s7.html"
-                                                    style="opacity: 1"><i class="pe-7s-look"></i>Mua thêm</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%">
-                                            <div class="row">
-                                                <div class="img">
-                                                    <img src="https://aristino.com/Data/ResizeImage/imagesproduct-outlet/so-mi-dai-tay/als143s7/ao-si-mi-aristino-ALS143S7-01x500x500x4.jpg"
-                                                        class="img-responsive" alt="Áo sơ mi nam Aristino ALS143S7" />
-                                                </div>
-                                                <div class="info">
-                                                    <h4 class="nomargin">Áo sơ mi nam Aristino ALS143S7</h4>
-                                                    <div class="alert-sale">Ưu đãi hội viên</div>
-                                                    <div class="alert-sale">Lên đồ mới - Đón nhịp sống mới</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="width: 30%">
-                                            <div class="price">
-                                                <span class="ins">405.000 đ</span>
-                                                <span class="del">1.350.000 đ</span>
-                                            </div>
-                                        </td>
-                                        <td class="actions" style="width: 20%">
-                                            <div class="actions-btn" style="position: inherit">
-                                                <a href="https://aristino.com/ao-so-mi-nam-aristino-als143s7.html"
-                                                    style="opacity: 1"><i class="pe-7s-look"></i>Mua thêm</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%">
-                                            <div class="row">
-                                                <div class="img">
-                                                    <img src="https://aristino.com/Data/ResizeImage/imagesproduct-outlet/so-mi-dai-tay/als144s7/ao-so-mi-nam-aristino-ALS144S7x500x500x4.jpg"
-                                                        class="img-responsive"
-                                                        alt="Áo sơ mi nam dài tay Aristino ALS144S7" />
-                                                </div>
-                                                <div class="info">
-                                                    <h4 class="nomargin">Áo sơ mi nam dài tay Aristino ALS144S7</h4>
-                                                    <div class="alert-sale">Ưu đãi hội viên</div>
-                                                    <div class="alert-sale">Lên đồ mới - Đón nhịp sống mới</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="width: 30%">
-                                            <div class="price">
-                                                <span class="ins">405.000 đ</span>
-                                                <span class="del">1.350.000 đ</span>
-                                            </div>
-                                        </td>
-                                        <td class="actions" style="width: 20%">
-                                            <div class="actions-btn" style="position: inherit">
-                                                <a href="https://aristino.com/ao-so-mi-nam-dai-tay-aristino-als144s7.html"
-                                                    style="opacity: 1"><i class="pe-7s-look"></i>Mua thêm</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <script type="text/javascript">
-                function cart_viewed(items) {
-                    follower.track("cart_viewed", {
-                        "target": {
-                            "itemType": "item",
-                            "itemId": "2937",
-                            "properties": {
-                                "active": true,
-                                "brand": "Aristino",
-                                "category": "Quần âu",
-                                "categoryID": "82",
-                                "categoryLevel1ID": "",
-                                "categoryLevel1Name": "",
-                                "categoryLevel2ID": "",
-                                "categoryLevel2Name": "",
-                                "categoryLevel3ID": "",
-                                "categoryLevel3Name": "",
-                                "categoryLevel4ID": "",
-                                "categoryLevel4Name": "",
-                                "categoryName": "Quần âu",
-                                "categoryPath": "",
-                                "collection": "",
-                                "color": "",
-                                "colorID": "",
-                                "colorName": "",
-                                "dateAdded": "2021-10-12 16:46:50",
-                                "description": "",
-                                "discountPercentage": 0,
-                                "discountValue": 0,
-                                "fashionSeason": "",
-                                "form": "",
-                                "gender": "",
-                                "itemID": "2937",
-                                "material": "",
-                                "price": "750000",
-                                "priceAfterDiscount": 750000,
-                                "product": "Quần âu nam Aristino ATR00301",
-                                "productID": "2937",
-                                "productName": "Quần âu nam Aristino ATR00301",
-                                "size": "",
-                                "stockLevel": 1,
-                                "stockStatus": false,
-                                "title": "Quần âu nam Aristino ATR00301",
-                                "webCategoryLevel1": "",
-                                "webCategoryLevel2": "",
-                                "webCategoryLevel3": "",
-                                "webImage": "https://aristino.com/Data/upload/images/Product/quan-au/ATR00301/quan-au-nam-aristino-ATR00301.jpg",
-                                "webUrl": "https://aristino.com/.html",
-                                "yearAdded": "2021"
-                            }
-                        },
-                        "properties": {
-                            "cartID": "0",
-                            "items": [2937]
-                        }
-                    })
-                }
-                cart_viewed();
-                $("#cartCheckoutBtn").click(function () {
-                    cart_check_out_started();
-                });
-            </script>
-        </main>
+         <style type="text/css">
+            .site-main {
+                padding: 0 56px;
+            }
+            .breadcrumbs {
+                color: #333f48;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                margin: 26px 0 23px;
+            }
+
+            .breadcrumbs .items {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                display: -ms-flexbox;
+                display: flex;
+            }
+            .breadcrumbs .item {
+                margin: 0;
+            }
+            .breadcrumbs a, .breadcrumbs strong {
+                color: #c8c7cc;
+            }
+
+            .breadcrumbs .item:not(:last-child):after {
+                content: "|";
+                margin: 0 6px;
+                color: #c8c7cc;
+            }
+            .cart-row {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                margin-top: 56px;
+                margin-bottom: 100px;
+                max-width: 1500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .cart-container {
+                width: 100%;
+            }
+            .cart-top {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                margin-bottom: 57px;
+            }
+            .cart-top .page-title {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 29px;
+                margin: 0;
+                text-transform: uppercase;
+            }
+            .checkout-cart-link-top {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 21px;
+                color: #656565;
+            }
+            .checkout-cart-link-top li {
+                margin: 0;
+            }
+            .checkout-cart-link-top li+li {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+            .checkout-cart-link-top li+li:before {
+                content: "";
+                width: 1px;
+                height: 12px;
+                background-color: #333f48;
+                display: inline-block;
+                margin: 0 20px;
+            }
+
+            .checkout-cart-link-top a {
+                color: #333f48;
+            }
+            
+            .cart-items {
+                width: 100%;
+                margin: 0 0 39px;
+                border-bottom: 1px solid #c8c7cc;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+            }
+            table {
+                border-spacing: 0;
+                border-collapse: collapse;
+                width: 100%;
+                max-width: 100%;
+            }
+            .cart-items .col.item {
+                padding-right: 40px;
+                width: 33.5%;
+            }
+            .cart-items .col.actions {
+                text-align: left;
+            }
+            .cart-items .col.qty {
+                text-align: left;
+                min-width: 100px;
+            }
+            .cart-items .col.price, .cart-items .col.price-sale, .cart-items .col.subtotal {
+                text-align: right;
+                white-space: nowrap;
+                padding-left: 15px;
+            }
+
+            .cart-items .cart-item-info {
+                display: -ms-flexbox;
+                display: flex;
+            }
+            .cart-items .cart-item-photo {
+                margin-right: 16px;
+                width: 60px;
+                min-width: 60px;
+            }
+            .cart-items .cart-item-name {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+                line-clamp: 1;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                margin: 0 0 5px;
+            }
+            .cart-items .cart-item-name a {
+                color: #333f48;
+            }
+            .cart-items .cart-item-option {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+                margin-bottom: 3px;
+            }
+            .cart-items .cart-item-option span {
+                display: block;
+                margin-right: 4px;
+            }
+            .cart-items .cart-item-option span {
+                display: block;
+                margin-right: 4px;
+            }
+
+            .cart-bottom {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                display: -ms-flexbox;
+                display: flex;
+            }
+
+            .cart-bottom-banner {
+                width: 60%;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                margin-bottom: 22px;
+            }
+            .cart-bottom-banner img {
+                display: block;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .cart-bottom-banner p {
+                margin-top: auto;
+                margin-bottom: 0;
+            }
+
+            .cart-bottom-banner a {
+                display: block;
+                color: #323232;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 22px;
+                padding: 10px 10px;
+                text-transform: uppercase;
+                margin-top: auto;
+                border: 1px solid #c8c7cc;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                border-radius: 2px;
+                max-width: 344px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cart-summary {
+                width: 33.3%;
+                margin-left: auto;
+                padding: 0;
+                background-color: transparent;
+                margin-bottom: 22px;
+                max-width: 364px;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+
+            .cart-summary .cart-totals {
+                border: none;
+                padding: 0;
+                margin-bottom: 80px;
+            }
+            .cart-summary .cart-totals td, .cart-summary .cart-totals th {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+                color: #333f48;
+                padding: 0 0 10px;
+                text-align: left;
+            }
+
+            .cart-summary .cart-totals td {
+                text-align: right;
+            }
+
+            .cart-summary .cart-totals .grand-totals th {
+                font-weight: 700;
+            }
+            
+            .cart-summary .action-checkout {
+                background: #333f48;
+                border: 1px solid #333f48;
+                border-radius: 2px;
+                height: auto;
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 22px;
+                padding: 10px 10px;
+                text-transform: uppercase;
+                color: #fff;
+                margin-top: auto;
+            }
+
+            .cart-items .cart-item-qty {
+                border: 1px solid #c8c7cc;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                border-radius: 40px;
+                width: 100px;
+                text-align: center;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+            
+            .cart-items .cart-item-qty .btn-number-minus {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMyIgdmlld0JveD0iMCAwIDE0IDMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi41NDY2IDAuMzc4OTA2TDEuMjM0MDkgMC4zNzg5MDVDMC43NTc1MjggMC4zNzg5MDUgMC4zNTEyNzggMC43NzczNDMgMC4zNTEyNzggMS4yNjk1M0MwLjM1MTI3OCAxLjc1MzkxIDAuNzU3NTI4IDIuMTYwMTYgMS4yMzQwOSAyLjE2MDE2TDEyLjU0NjYgMi4xNjAxNkMxMy4wMDc1IDIuMTYwMTYgMTMuNDI5NCAxLjc1MzkxIDEzLjQyOTQgMS4yNjk1M0MxMy40Mjk0IDAuNzc3MzQ0IDEzLjAwNzUgMC4zNzg5MDYgMTIuNTQ2NiAwLjM3ODkwNloiIGZpbGw9IiM4QThBOEYiLz4KPC9zdmc+Cg==);
+                background-position: right center;
+            }
+
+            .cart-items .cart-item-qty .btn-number {
+                width: 25px;
+                height: 34px;
+                display: block;
+                background-position: center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+
+            .cart-items .cart-item-qty .btn-number span {
+                display: none;
+            }
+            button, input, optgroup, select, textarea {
+                font: inherit;
+                color: inherit;
+                padding: 6px 12px;
+                outline: 0!important;
+            }
+            .cart-items .cart-item-qty .input-cart-item-qty {
+                width: 50px;
+                height: 34px;
+                display: block;
+                background-repeat: no-repeat;
+                border: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                text-align: center;
+                color: #333f48;
+                font-weight: 500;
+                font-size: 14px;
+                padding: 0;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+                -webkit-appearance: textfield;
+                -webkit-appearance: none;
+                -moz-appearance: textfield;
+            }
+
+            .cart-items .cart-item-qty .btn-number-plus {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNSAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjAxNTYgNi44MTg1NEMxNC4wMTU2IDYuMzI2MzUgMTMuNjA5NCA1LjkyNzkxIDEzLjE0ODQgNS45Mjc5MUw4LjI1NzgxIDUuOTI3OTFMOC4yNTc4MSAxLjE2MjI5QzguMjU3ODEgMC42ODU3MjUgNy44NTkzOCAwLjI3OTQ3NSA3LjM2NzE5IDAuMjc5NDc1QzYuODgyODEgMC4yNzk0NzUgNi40NzY1NiAwLjY4NTcyNSA2LjQ3NjU2IDEuMTYyMjlMNi40NzY1NiA1LjkyNzkxTDEuNTg1OTQgNS45Mjc5MUMxLjExNzE5IDUuOTI3OTEgMC43MTg3NSA2LjMyNjM1IDAuNzE4NzUgNi44MTg1NEMwLjcxODc1IDcuMzAyOTEgMS4xMTcxOSA3LjcwOTE2IDEuNTg1OTQgNy43MDkxNkw2LjQ3NjU2IDcuNzA5MTZMNi40NzY1NiAxMi40NzQ4QzYuNDc2NTYgMTIuOTM1NyA2Ljg4MjgxIDEzLjM1NzYgNy4zNjcxOSAxMy4zNTc2QzcuODU5MzcgMTMuMzU3NiA4LjI1NzgxIDEyLjkzNTcgOC4yNTc4MSAxMi40NzQ4TDguMjU3ODEgNy43MDkxNkwxMy4xNDg0IDcuNzA5MTZDMTMuNjA5NCA3LjcwOTE2IDE0LjAxNTYgNy4zMDI5MSAxNC4wMTU2IDYuODE4NTRaIiBmaWxsPSIjOEE4QThGIi8+Cjwvc3ZnPgo=);
+                background-position: left center;
+            }
+
+            .cart-items .action-delete {
+                white-space: nowrap;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                color: #c8c7cc;
+            }
+
+            .cart-items thead .col {
+                border-bottom: 1px solid #c8c7cc;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 21px;
+                padding: 10px 0;
+                text-transform: uppercase;
+                text-align: left;
+                border-top: none;
+            }
+            .cart-items .col {
+                padding: 19px 0 11px;
+                border-top: 1px solid #f6f6f6;
+                width: 13.3%;
+                vertical-align: top;
+            }
 
 
+            .block-minicart {
+                position: absolute;
+                top: 100%;
+                right: 0px;
+                background-color: #fff;
+                z-index: 500;
+                border: 1px solid #f6f6f6;
+                -webkit-box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+                box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+                border-radius: 2px;
+                width: 396px;
+                display: none;
+            }
+
+            .cart__menu.active .block-minicart {
+                display: block;
+            }
+
+            .minicart-items {
+                list-style: none;
+                padding: 8px 16px;
+                margin: 0;
+                overflow-y: auto;
+                max-height: calc(100vh - 240px);
+                max-height: -o-calc(100vh - 240px);
+            }
+
+            .minicart-item:last-child {
+                border-bottom: none;
+            }
+            .minicart-item {
+                margin: 0;
+                padding: 8px 0;
+            }
+
+            .minicart-item-info {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+            .minicart-item-photo {
+                width: 60px;
+                margin-right: 8px;
+                position: relative;
+                overflow: hidden;
+            }
+            .minicart-item-photo img {
+                display: block;
+                width: 100%;
+            }
+            .minicart-item-label {
+                position: absolute;
+                bottom: 4px;
+                left: 0;
+                z-index: 5;
+                font-weight: 700;
+                font-size: 8px;
+                line-height: 14px;
+                padding: 0 4px;
+                background: #da291c;
+                color: #fff;
+            }
+
+            .minicart-item-details {
+                width: calc(100% - 68px);
+                width: -o-calc(100% - 68px);
+                position: relative;
+            }
+
+            .minicart-item-name {
+                margin: 0 0 6px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 24px;
+                color: #c8c7cc;
+                margin-right: 40px;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .minicart-item-name a {
+                color: #c8c7cc;
+                text-transform: none;
+            }
+            .minicart-item-options {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                margin-bottom: 8px;
+            }
+            .minicart-item-option {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 16px;
+                color: #000;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+            .minicart-item-option:not(:first-child) {
+                margin-left: 4px;
+            }
+            .minicart-item-option:not(:first-child):before {
+                content: "/";
+                display: inline-block;
+                margin-right: 4px;
+                vertical-align: middle;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+            }
+            .minicart-item-option .value {
+                text-transform: uppercase;
+            }
+            .minicart-item-option .swatch-option {
+                width: 16px;
+                min-width: 16px;
+                line-height: 16px;
+                height: 16px;
+                border-radius: 100%;
+                display: block;
+                vertical-align: middle;
+                margin: 0;
+                margin-right: 4px;
+            }
+            .minicart-item-option .label {
+                margin-right: 5px;
+                color : #000;
+            }
+            .minicart-item-option:not(:first-child) {
+                margin-left: 4px;
+            }
+            .minicart-item-option .value {
+                text-transform: uppercase;
+            }
+
+            .minicart-item-action {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .minicart-item-remove {
+                color: #da291c;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                text-decoration: underline;
+                display: block;
+                margin-top: 4px;
+            }
+            .minicart-item-price {
+                color: #333f48;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 16px;
+            }
+            .minicart-item-price .price {
+                color: #333f48;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            .minicart-actions {
+                padding: 24px 16px 19px 8px;
+            }
+            .minicart-actions .action.checkout {
+                background: #333f48;
+                border-radius: 2px;
+                display: block;
+                width: 100%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 24px;
+                padding: 12px;
+                border: none;
+            }
+            .minicart-subtotal {
+                padding: 0 16px 16px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 24px;
+                text-align: center;
+                color : #000;
+            }
+
+            .minicart-close {
+                width: 36px;
+                height: 36px;
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 5px;
+                z-index: 10;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wLjI5Mjg5IDAuMjkyODlDMC42ODM0MiAtMC4wOTc2MyAxLjMxNjU4IC0wLjA5NzYzIDEuNzA3MTEgMC4yOTI4OUw1IDMuNTg1OEw4LjI5MjkgMC4yOTI4OUM4LjY4MzQgLTAuMDk3NjMgOS4zMTY2IC0wLjA5NzYzIDkuNzA3MSAwLjI5Mjg5QzEwLjA5NzYgMC42ODM0MiAxMC4wOTc2IDEuMzE2NTggOS43MDcxIDEuNzA3MTFMNi40MTQyIDVMOS43MDcxIDguMjkyOUMxMC4wOTc2IDguNjgzNCAxMC4wOTc2IDkuMzE2NiA5LjcwNzEgOS43MDcxQzkuMzE2NiAxMC4wOTc2IDguNjgzNCAxMC4wOTc2IDguMjkyOSA5LjcwNzFMNSA2LjQxNDJMMS43MDcxMSA5LjcwNzFDMS4zMTY1OCAxMC4wOTc2IDAuNjgzNDIgMTAuMDk3NiAwLjI5Mjg5IDkuNzA3MUMtMC4wOTc2MyA5LjMxNjYgLTAuMDk3NjMgOC42ODM0IDAuMjkyODkgOC4yOTI5TDMuNTg1OCA1TDAuMjkyODkgMS43MDcxMUMtMC4wOTc2MyAxLjMxNjU4IC0wLjA5NzYzIDAuNjgzNDIgMC4yOTI4OSAwLjI5Mjg5WiIgZmlsbD0iI0M4QzdDQyIvPgo8L3N2Zz4K);
+                cursor: pointer;
+            }
+
+            .minicart-close span {
+                display: none;
+            }
+
+            .minicart-empty {
+                text-align: center;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                height: 264px;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+            .minicart-empty p {
+                color : #000;
+            }
+            .minicart-empty-icon {
+                background-image: url("images/icon-emptycart.svg");
+                display: block;
+                width: 98px;
+                height: 98px;
+                margin: 16px auto;
+            }
+
+            
+
+         </style>
 
 
         <footer>

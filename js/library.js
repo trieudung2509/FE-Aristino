@@ -317,14 +317,32 @@ $(function () {
     })
 
     $('.cart__menu').on('click', function () {
-        $('.shopping__cart').addClass('shopping__cart__on')
-        $('.body__overlay').addClass('is-visible')
+        $(this).addClass('active')
     })
 
     $('.offsetmenu__close__btn').on('click', function () {
         $('.shopping__cart').removeClass('shopping__cart__on')
         $('.body__overlay').removeClass('is-visible')
-    })
+    });
+
+    $(document).mouseup(function(e) 
+    {
+        var container = $(".cart__menu");
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0) 
+        {
+            container.removeClass("active");
+        }
+    });
+    
+    $(document).on("click",".minicart-close", function() {
+        $(this).parents(".cart__menu").removeClass("active");
+    });
+
+    // $('body').click(function() {
+    //     $(this).find('.cart__menu').removeClass('active');
+    //  });
 
     //scroll menu
     //$(window).scroll(function () {
